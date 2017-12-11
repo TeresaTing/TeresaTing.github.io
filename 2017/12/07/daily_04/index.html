@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/TeresaTing/TeresaTing.github.io">
-  <title>Archives: 2017 | Sunshine</title>
+  <title>daily_04 | Sunshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sunshine">
-<meta property="og:url" content="https://github.com/TeresaTing/TeresaTing.github.io/archives/2017/index.html">
+  <meta name="description" content="如何写一个简易的web计算器实现两个数字的加减乘除123456789101112131415161718192021222324252627282930313233343536373839404142434445464748&amp;lt;input type=&quot;text&quot; name=&quot;t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="daily_04">
+<meta property="og:url" content="https://github.com/TeresaTing/TeresaTing.github.io/2017/12/07/daily_04/index.html">
 <meta property="og:site_name" content="Sunshine">
+<meta property="og:description" content="如何写一个简易的web计算器实现两个数字的加减乘除123456789101112131415161718192021222324252627282930313233343536373839404142434445464748&amp;lt;input type=&quot;text&quot; name=&quot;text&quot; id=&quot;pre&quot; onblur=&quot;validate(this.value);&quot;&amp;gt;&amp;lt;select">
+<meta property="og:updated_time" content="2017-12-11T03:28:32.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sunshine">
+<meta name="twitter:title" content="daily_04">
+<meta name="twitter:description" content="如何写一个简易的web计算器实现两个数字的加减乘除123456789101112131415161718192021222324252627282930313233343536373839404142434445464748&amp;lt;input type=&quot;text&quot; name=&quot;text&quot; id=&quot;pre&quot; onblur=&quot;validate(this.value);&quot;&amp;gt;&amp;lt;select">
   
     <link rel="alternative" href="/atom.xml" title="Sunshine" type="application/atom+xml">
   
@@ -149,184 +153,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-daily_04" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      daily_04
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/07/daily_04/" class="archive-article-date">
+
+        
+        <a href="/2017/12/07/daily_04/" class="archive-article-date">
   	<time datetime="2017-12-07T03:30:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/07/daily_04/">daily_04</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="如何写一个简易的web计算器实现两个数字的加减乘除"><a href="#如何写一个简易的web计算器实现两个数字的加减乘除" class="headerlink" title="如何写一个简易的web计算器实现两个数字的加减乘除"></a>如何写一个简易的web计算器实现两个数字的加减乘除</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"text"</span> id=<span class="string">"pre"</span> onblur=<span class="string">"validate(this.value);"</span>&gt;</span><br><span class="line">&lt;select  id=<span class="string">"operator"</span>&gt;</span><br><span class="line">    &lt;option value=<span class="string">"+"</span>&gt;+&lt;/option&gt;</span><br><span class="line">    &lt;option value=<span class="string">"-"</span>&gt;-&lt;/option&gt;</span><br><span class="line">    &lt;option value=<span class="string">"*"</span>&gt;*&lt;/option&gt;</span><br><span class="line">    &lt;option value=<span class="string">"/"</span>&gt;/&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"text"</span> id=<span class="string">"next"</span> onblur=<span class="string">"validate(this.value);"</span>&gt;</span><br><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"button"</span> id=<span class="string">"btn"</span> value=<span class="string">"="</span> onclick=<span class="string">"calculator();"</span>&gt;</span><br><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"result"</span> <span class="built_in">readonly</span>=<span class="string">"true"</span>&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">function</span> validate(str)&#123;</span><br><span class="line">    var reg = /^\d+$/;              </span><br><span class="line">           <span class="keyword">if</span> (!reg.test(str)) &#123;                  </span><br><span class="line">               alert(<span class="string">"请输入数字"</span>);</span><br><span class="line">           &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">calculator</span></span>()&#123;</span><br><span class="line">    var pre=document.getElementById(<span class="string">"pre"</span>).value;</span><br><span class="line">    var next=document.getElementById(<span class="string">"next"</span>).value;</span><br><span class="line">    var opra=document.getElementById(<span class="string">"operator"</span>).value;</span><br><span class="line"> </span><br><span class="line">    var result=0;</span><br><span class="line">    switch(opra) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"+"</span>:</span><br><span class="line">            result=parseInt(pre)+parseInt(next);</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"-"</span>:</span><br><span class="line">            result=parseInt(pre)-parseInt(next);</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"*"</span>:</span><br><span class="line">            result=parseInt(pre)*parseInt(next);</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"/"</span>:</span><br><span class="line">            <span class="keyword">if</span>(parseInt(next)!=0)&#123;</span><br><span class="line">                result=parseInt(pre)/parseInt(next);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                alert(<span class="string">"除数不能为0"</span>);</span><br><span class="line">                <span class="built_in">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        default:</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    document.getElementById(<span class="string">"result"</span>).value=result;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/TeresaTing/TeresaTing.github.io/2017/12/07/daily_04/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/daily_03/" class="archive-article-date">
-  	<time datetime="2017-12-05T04:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/05/daily_03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">daily_03</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/daily_03/">daily_03</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/01/daily_02/" class="archive-article-date">
-  	<time datetime="2017-12-01T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/01/daily_02/">daily_02</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/18/daily_01/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/18/daily_01/">daily_01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/18/test/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/18/test/">test</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/18/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:13:56.928Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -349,8 +324,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
