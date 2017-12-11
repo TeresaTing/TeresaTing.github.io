@@ -151,6 +151,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-daily_02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/01/daily_02/">daily_02</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/01/daily_02/" class="archive-article-date">
+  	<time datetime="2017-12-01T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="利用javaScript寻找自幂数。"><a href="#利用javaScript寻找自幂数。" class="headerlink" title="利用javaScript寻找自幂数。"></a>利用javaScript寻找自幂数。</h1><h3 id="自幂数是指一个n位数，它的每个位上的数字的n次幂之和等于它本身。-例如-当n为3时，有1-3-5-3-3-3-153，153即是n为3时的一个自幂数"><a href="#自幂数是指一个n位数，它的每个位上的数字的n次幂之和等于它本身。-例如-当n为3时，有1-3-5-3-3-3-153，153即是n为3时的一个自幂数" class="headerlink" title="自幂数是指一个n位数，它的每个位上的数字的n次幂之和等于它本身。(例如:当n为3时，有1^3 + 5^3 + 3^3 = 153，153即是n为3时的一个自幂数)"></a>自幂数是指一个n位数，它的每个位上的数字的n次幂之和等于它本身。(例如:当n为3时，有1^3 + 5^3 + 3^3 = 153，153即是n为3时的一个自幂数)</h3><h3 id="自幂数包括-独身数、水仙花数、四叶玫瑰数、五角星数、六合数、北斗七星数、八仙数、九九重阳数、十全十美数"><a href="#自幂数包括-独身数、水仙花数、四叶玫瑰数、五角星数、六合数、北斗七星数、八仙数、九九重阳数、十全十美数" class="headerlink" title="自幂数包括:独身数、水仙花数、四叶玫瑰数、五角星数、六合数、北斗七星数、八仙数、九九重阳数、十全十美数"></a>自幂数包括:独身数、水仙花数、四叶玫瑰数、五角星数、六合数、北斗七星数、八仙数、九九重阳数、十全十美数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">		<span class="keyword">function</span> found(num1,num2)&#123;</span><br><span class="line">			var arr=[];</span><br><span class="line">			<span class="keyword">while</span> (num1&lt;num2) &#123;</span><br><span class="line">                var i = 100;</span><br><span class="line">                var count = 0, sum = 0, a;</span><br><span class="line">                 /*判断num是几位数*/</span><br><span class="line">                 <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">                      <span class="keyword">if</span> (num1 / i &gt;= 1) &#123;</span><br><span class="line">                          i *= 10;</span><br><span class="line">                         count++;      //count = 1时，为3位数，2时为四位数;</span><br><span class="line">                     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                         i /= 10;         //进到这里时num&lt;i,除以10跟num同位数;</span><br><span class="line">                        <span class="built_in">break</span>;</span><br><span class="line">                     &#125;</span><br><span class="line">                 &#125;</span><br><span class="line">　　　　　　　　/*取到每一位并计算每位数几次幂之和*/</span><br><span class="line">                 <span class="keyword">while</span> (i &gt;= 1) &#123;</span><br><span class="line">                     var b = 1;</span><br><span class="line">                     a = parseInt(num1 % (i * 10) / i);      </span><br><span class="line">				//取到num的每一位</span><br><span class="line">                     <span class="keyword">for</span> (var j = 1; j &lt;= count + 2; j++) &#123;</span><br><span class="line">                         b *= a;                       //根据位数，来决定每位数的几次幂</span><br><span class="line">                     &#125;</span><br><span class="line">                     sum += b;                         //对每位数的几次幂进行求和；</span><br><span class="line">                     i/=10;                              //更新循环变量取下一位</span><br><span class="line">                 &#125;</span><br><span class="line"> 　　　　　　　/*判断是否为自幂数*/</span><br><span class="line">                 <span class="keyword">if</span> (num1 ==sum) &#123;</span><br><span class="line">					arr.push(num1);</span><br><span class="line">                 &#125;</span><br><span class="line">				 num1++;           </span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">return</span> arr;</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(found(100,1000));    //返回[153,370,371,407]</span><br><span class="line">		console.log(found(100,10000));   //返回[153,370,371,407,1634,8208,9474]</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/01/daily_02/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-daily_01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
