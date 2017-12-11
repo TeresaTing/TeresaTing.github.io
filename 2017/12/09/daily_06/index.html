@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/TeresaTing/TeresaTing.github.io">
-  <title>Archives: 2017/11 | Sunshine</title>
+  <title>daily_06 | Sunshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sunshine">
-<meta property="og:url" content="https://github.com/TeresaTing/TeresaTing.github.io/archives/2017/11/index.html">
+  <meta name="description" content="日期计算器：输入年月日，判断该日是该年的第?天12345678910111213141516171819202122232425262728293031323334353637383940414243&amp;lt;script&amp;gt;	function calDate()&amp;#123;			//1、输入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="daily_06">
+<meta property="og:url" content="https://github.com/TeresaTing/TeresaTing.github.io/2017/12/09/daily_06/index.html">
 <meta property="og:site_name" content="Sunshine">
+<meta property="og:description" content="日期计算器：输入年月日，判断该日是该年的第?天12345678910111213141516171819202122232425262728293031323334353637383940414243&amp;lt;script&amp;gt;	function calDate()&amp;#123;			//1、输入年月日			var year = Number(prompt(&quot;Year:&quot;));			var mont">
+<meta property="og:updated_time" content="2017-12-11T03:50:49.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sunshine">
+<meta name="twitter:title" content="daily_06">
+<meta name="twitter:description" content="日期计算器：输入年月日，判断该日是该年的第?天12345678910111213141516171819202122232425262728293031323334353637383940414243&amp;lt;script&amp;gt;	function calDate()&amp;#123;			//1、输入年月日			var year = Number(prompt(&quot;Year:&quot;));			var mont">
   
     <link rel="alternative" href="/atom.xml" title="Sunshine" type="application/atom+xml">
   
@@ -149,103 +153,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-daily_06" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      daily_06
+    </h1>
+  
+
+        
+        <a href="/2017/12/09/daily_06/" class="archive-article-date">
+  	<time datetime="2017-12-09T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="日期计算器：输入年月日，判断该日是该年的第-天"><a href="#日期计算器：输入年月日，判断该日是该年的第-天" class="headerlink" title="日期计算器：输入年月日，判断该日是该年的第?天"></a>日期计算器：输入年月日，判断该日是该年的第?天</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">calDate</span></span>()&#123;</span><br><span class="line">			//1、输入年月日</span><br><span class="line">			var year = Number(prompt(<span class="string">"Year:"</span>));</span><br><span class="line">			var month = Number(prompt(<span class="string">"Month:"</span>));</span><br><span class="line">			var day = Number(prompt(<span class="string">"Day:"</span>));</span><br><span class="line">			//2、计算从1月开始 到 month-1 月共多少天(从month-1月开始，一直到1月的天数累加)</span><br><span class="line">			var totalDays = 0;</span><br><span class="line">			switch(month-1)&#123;</span><br><span class="line">				<span class="keyword">case</span> 11:</span><br><span class="line">					totalDays += 30;</span><br><span class="line">				<span class="keyword">case</span> 10:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 9:</span><br><span class="line">					totalDays += 30;</span><br><span class="line">				<span class="keyword">case</span> 8:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 7:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 6:</span><br><span class="line">					totalDays += 30;</span><br><span class="line">				<span class="keyword">case</span> 5:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 4:</span><br><span class="line">					totalDays += 30;</span><br><span class="line">				<span class="keyword">case</span> 3:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 2:</span><br><span class="line">					<span class="keyword">if</span>(isRun(year))&#123;</span><br><span class="line">						totalDays += 29;</span><br><span class="line">					&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">						totalDays += 28;</span><br><span class="line">					&#125;</span><br><span class="line">				<span class="keyword">case</span> 1:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">					<span class="built_in">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			//3、将用户输入的day累加到totalDays的后面</span><br><span class="line">			totalDays += day;</span><br><span class="line">			console.log(<span class="string">"是第"</span>+totalDays+<span class="string">"天"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;button onclick=<span class="string">"calDate()"</span>&gt;日期计算器&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/18/daily_01/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/18/daily_01/">daily_01</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/TeresaTing/TeresaTing.github.io/2017/12/09/daily_06/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/18/test/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/12/10/daily_07/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          daily_07
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/08/daily_05/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">daily_05</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/18/test/">test</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/18/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:13:56.928Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/18/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -268,8 +333,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

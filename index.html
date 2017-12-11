@@ -82,7 +82,7 @@
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -123,7 +123,7 @@
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -150,6 +150,200 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-daily_07" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/10/daily_07/">daily_07</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/10/daily_07/" class="archive-article-date">
+  	<time datetime="2017-12-10T04:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="将十进制的数字转换为二进制并返回"><a href="#将十进制的数字转换为二进制并返回" class="headerlink" title="将十进制的数字转换为二进制并返回"></a>将十进制的数字转换为二进制并返回</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> decode2Bin(num)&#123;</span><br><span class="line">				//1、声明一个数组stack,用于保存每次计算出来的余数</span><br><span class="line">				var stack=[];</span><br><span class="line">				/*</span><br><span class="line">					2、操作</span><br><span class="line">						2.1循环条件：当num&gt;0的时候，继续循环</span><br><span class="line">						2.2循环操作：</span><br><span class="line">							2.2.1先计算num%2的值，并保存进stack中</span><br><span class="line">							2.2.2将num/2的结果取整再赋值给num</span><br><span class="line">				 */</span><br><span class="line">				 <span class="keyword">while</span>(num&gt;0)&#123;</span><br><span class="line">					 var r=num%2;</span><br><span class="line">					 stack.push(r);</span><br><span class="line">					 num=parseInt(num/2);</span><br><span class="line">				 &#125;</span><br><span class="line">				 //3、将stack反转并拼成字符串，再返回</span><br><span class="line">				 <span class="built_in">return</span> stack.reverse().join(<span class="string">""</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">function</span> <span class="function"><span class="title">testDecode</span></span>()&#123;</span><br><span class="line">				var num=parseInt(prompt(<span class="string">"请输入一个数字："</span>));</span><br><span class="line">				var result=decode2Bin(num);</span><br><span class="line">				console.log(num+<span class="string">"---&gt;"</span>+result);</span><br><span class="line">			&#125;</span><br><span class="line">    testDecode();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="打印九九乘法表"><a href="#打印九九乘法表" class="headerlink" title="打印九九乘法表"></a>打印九九乘法表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">printNine</span></span>()&#123;</span><br><span class="line">				<span class="keyword">for</span>(var i=1,array=[];i&lt;=9;i++,array.length=0)&#123;</span><br><span class="line">					<span class="keyword">for</span>(var j=1;j&lt;=i;j++)&#123;</span><br><span class="line">						array[array.length]=i+<span class="string">"*"</span>+j+<span class="string">"="</span>+(i*j);</span><br><span class="line">					&#125;</span><br><span class="line">					console.log(array.join(<span class="string">"\t"</span>));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">    printNine();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="打印等腰三角形"><a href="#打印等腰三角形" class="headerlink" title="打印等腰三角形"></a>打印等腰三角形</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">printTriangle1</span></span>()&#123;</span><br><span class="line">				<span class="keyword">for</span>(var i=1,array=[];i&lt;=5;i++,array.length=0)&#123;</span><br><span class="line">					//内层循环1：控制空格</span><br><span class="line">					<span class="keyword">for</span>(var j=1;j&lt;=5-i;j++)&#123;</span><br><span class="line">						array[array.length]=<span class="string">" "</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					//内层循环2：控制*</span><br><span class="line">					<span class="keyword">for</span>(var k=1;k&lt;=2*i-1;k++)&#123;</span><br><span class="line">						array[array.length]=<span class="string">"*"</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					console.log(array.join(<span class="string">""</span>));</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">    printTriangle1();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="打印菲波那切数列中的前10个数-兔子生子问题：一对兔子，第3个月生一对小兔子，小兔子第3个月也生一对兔子，以此类推，问第10个月共有多少对兔子？"><a href="#打印菲波那切数列中的前10个数-兔子生子问题：一对兔子，第3个月生一对小兔子，小兔子第3个月也生一对兔子，以此类推，问第10个月共有多少对兔子？" class="headerlink" title="打印菲波那切数列中的前10个数(兔子生子问题：一对兔子，第3个月生一对小兔子，小兔子第3个月也生一对兔子，以此类推，问第10个月共有多少对兔子？)"></a>打印菲波那切数列中的前10个数(兔子生子问题：一对兔子，第3个月生一对小兔子，小兔子第3个月也生一对兔子，以此类推，问第10个月共有多少对兔子？)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">printFib</span></span>()&#123;</span><br><span class="line">			//1、先声明两个数字，n1 和 n2 ，分别赋值为1</span><br><span class="line">			var n1 = 1 , n2 = 1;</span><br><span class="line">			//2、将 n1 和 n2 的值打印输出</span><br><span class="line">			console.log(n1);</span><br><span class="line">			console.log(n2);</span><br><span class="line">			//3、通过 n1 和 n2 计算第三个 数字，赋值给 n1，再通过 n1 和 n2 计算第四个数字，赋值给 n2，打印输出 n1 和 n2 ；再通过 n1 和 n2 计算第五个数字，赋值给n1，再通过 n1 和 n2 计算第六个数字，赋值给 n2 ，打印输出 n1 和 n2 ; ... ...</span><br><span class="line">			<span class="keyword">for</span>(var i = 1;i&lt;=4 ; i ++)&#123;</span><br><span class="line">				//将 n1 和 n2 相加 赋值给 n1 ，表示 第3,5,7,9 个数</span><br><span class="line">				n1=n1 + n2;</span><br><span class="line">				console.log(n1);</span><br><span class="line">				//将 n1(新) 和 n2 相加，赋值给n2，表示 第4,6,8,10个数</span><br><span class="line">				n2=n1 + n2;</span><br><span class="line">				console.log(n2);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    printFib();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="判断质数"><a href="#判断质数" class="headerlink" title="判断质数"></a>判断质数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">//方法一：</span><br><span class="line">	<span class="keyword">function</span> isPrime(n)&#123;</span><br><span class="line">      <span class="keyword">if</span>(!isNaN(n)&amp;&amp;n&gt;1)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;=3) <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(n%2==0) <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="keyword">for</span>(var i=3;i&lt;=Math.sqrt(n);i+=2)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n%i==0)</span><br><span class="line">              <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;<span class="keyword">else</span></span><br><span class="line">        console.error(<span class="string">"必须输入&gt;1的数字"</span>);</span><br><span class="line">    &#125;//执行效率; 异常处理;</span><br><span class="line">    isPrime(117);//<span class="literal">false</span></span><br><span class="line">//方法二：</span><br><span class="line"><span class="keyword">function</span> isPrime(num)&#123;</span><br><span class="line">    <span class="keyword">for</span>(var i=2;i&lt;num;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(num%i==0)&#123;</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i==num)&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(isPrime(19));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/10/daily_07/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-daily_06" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/09/daily_06/">daily_06</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/09/daily_06/" class="archive-article-date">
+  	<time datetime="2017-12-09T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="日期计算器：输入年月日，判断该日是该年的第-天"><a href="#日期计算器：输入年月日，判断该日是该年的第-天" class="headerlink" title="日期计算器：输入年月日，判断该日是该年的第?天"></a>日期计算器：输入年月日，判断该日是该年的第?天</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">calDate</span></span>()&#123;</span><br><span class="line">			//1、输入年月日</span><br><span class="line">			var year = Number(prompt(<span class="string">"Year:"</span>));</span><br><span class="line">			var month = Number(prompt(<span class="string">"Month:"</span>));</span><br><span class="line">			var day = Number(prompt(<span class="string">"Day:"</span>));</span><br><span class="line">			//2、计算从1月开始 到 month-1 月共多少天(从month-1月开始，一直到1月的天数累加)</span><br><span class="line">			var totalDays = 0;</span><br><span class="line">			switch(month-1)&#123;</span><br><span class="line">				<span class="keyword">case</span> 11:</span><br><span class="line">					totalDays += 30;</span><br><span class="line">				<span class="keyword">case</span> 10:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 9:</span><br><span class="line">					totalDays += 30;</span><br><span class="line">				<span class="keyword">case</span> 8:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 7:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 6:</span><br><span class="line">					totalDays += 30;</span><br><span class="line">				<span class="keyword">case</span> 5:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 4:</span><br><span class="line">					totalDays += 30;</span><br><span class="line">				<span class="keyword">case</span> 3:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">				<span class="keyword">case</span> 2:</span><br><span class="line">					<span class="keyword">if</span>(isRun(year))&#123;</span><br><span class="line">						totalDays += 29;</span><br><span class="line">					&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">						totalDays += 28;</span><br><span class="line">					&#125;</span><br><span class="line">				<span class="keyword">case</span> 1:</span><br><span class="line">					totalDays += 31;</span><br><span class="line">					<span class="built_in">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			//3、将用户输入的day累加到totalDays的后面</span><br><span class="line">			totalDays += day;</span><br><span class="line">			console.log(<span class="string">"是第"</span>+totalDays+<span class="string">"天"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;button onclick=<span class="string">"calDate()"</span>&gt;日期计算器&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/09/daily_06/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-daily_05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/08/daily_05/">daily_05</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/08/daily_05/" class="archive-article-date">
+  	<time datetime="2017-12-08T02:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="php常见逻辑练习题"><a href="#php常见逻辑练习题" class="headerlink" title="php常见逻辑练习题"></a>php常见逻辑练习题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">1.打印所有的四位水仙花数</span><br><span class="line">*/</span><br><span class="line"><span class="variable">$i</span>=1000;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$i</span>&lt;10000)&#123;</span><br><span class="line">	//<span class="variable">$qian</span>=(<span class="variable">$i</span>-<span class="variable">$i</span>/1000)/1000;</span><br><span class="line">	//<span class="variable">$qian</span>=<span class="variable">$i</span>/1000%10;</span><br><span class="line">	<span class="variable">$qian</span>=(int)(<span class="variable">$i</span>/1000);</span><br><span class="line">	<span class="variable">$bai</span>=(int)((<span class="variable">$i</span>-<span class="variable">$qian</span>*1000)/100);</span><br><span class="line">	<span class="variable">$shi</span>=(int)(<span class="variable">$i</span>%100/10);</span><br><span class="line">	<span class="variable">$ge</span>=<span class="variable">$i</span>%10;</span><br><span class="line"></span><br><span class="line">	<span class="comment">#if($i===$qian*$qian*$qian*$qian+$bai*$bai*$bai*$bai+$shi*$shi*$shi*$shi+$ge*$ge*$ge*$ge)&#123;</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="variable">$i</span>===pow(<span class="variable">$qian</span>,4)+pow(<span class="variable">$bai</span>,4)+pow(<span class="variable">$shi</span>,4)+pow(<span class="variable">$ge</span>,4))&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"<span class="variable">$i</span> &amp;nbsp;&amp;nbsp"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="variable">$i</span>++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line"><span class="comment">#2.循环体打印一个※</span></span><br><span class="line"><span class="variable">$i</span>=1;</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$i</span>&lt;=10)&#123;</span><br><span class="line">	<span class="built_in">echo</span><span class="string">'※'</span>;</span><br><span class="line">	<span class="variable">$i</span>++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line"><span class="comment">#3.打印5行10列个※</span></span><br><span class="line"><span class="variable">$i</span>=0;</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$i</span>&lt;50)&#123;</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"※"</span>;</span><br><span class="line">	<span class="variable">$i</span>++;</span><br><span class="line">	<span class="keyword">if</span>(<span class="variable">$i</span>%10===0)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line"><span class="variable">$j</span>=0;</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$j</span>&lt;5)&#123;</span><br><span class="line">	<span class="variable">$i</span>=0;</span><br><span class="line">	<span class="keyword">while</span>(<span class="variable">$i</span>&lt;10)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"※"</span>;</span><br><span class="line">		<span class="variable">$i</span>++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">	<span class="variable">$j</span>++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line">/*</span><br><span class="line">4.打印※：</span><br><span class="line">※</span><br><span class="line">※※</span><br><span class="line">※※※</span><br><span class="line">※※※※</span><br><span class="line">※※※※※</span><br><span class="line">*/</span><br><span class="line"><span class="variable">$j</span>=1;</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$j</span>&lt;=5)&#123;</span><br><span class="line">	<span class="variable">$i</span>=1;</span><br><span class="line">	<span class="keyword">while</span>(<span class="variable">$i</span>&lt;=<span class="variable">$j</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">'※'</span>;</span><br><span class="line">		<span class="variable">$i</span>++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">	<span class="variable">$j</span>++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;hr&gt;'</span>;</span><br><span class="line">/*打印※:</span><br><span class="line">※※※※※</span><br><span class="line">※※※※</span><br><span class="line">※※※</span><br><span class="line">※※</span><br><span class="line">※*/</span><br><span class="line"><span class="variable">$j</span>=5;</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$j</span>&gt;=1)&#123;</span><br><span class="line">	<span class="variable">$i</span>=1;</span><br><span class="line">	<span class="keyword">while</span>(<span class="variable">$i</span>&lt;=<span class="variable">$j</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">'※'</span>;</span><br><span class="line">		<span class="variable">$i</span>++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">	<span class="variable">$j</span>--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;hr&gt;'</span>;</span><br><span class="line"><span class="comment">#5.九九乘法表：</span></span><br><span class="line"><span class="comment">#方法1：</span></span><br><span class="line"><span class="variable">$j</span>=1;</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$j</span>&lt;=9)&#123;</span><br><span class="line">	<span class="variable">$i</span>=1;</span><br><span class="line">	<span class="keyword">while</span>(<span class="variable">$i</span>&lt;=<span class="variable">$j</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"<span class="variable">$j</span>*<span class="variable">$i</span>="</span>.<span class="variable">$j</span>*<span class="variable">$i</span>.<span class="string">"&amp;nbsp;&amp;nbsp;"</span>;</span><br><span class="line">		<span class="variable">$i</span>++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">	<span class="variable">$j</span>++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#方法2：</span></span><br><span class="line"><span class="comment">#用for写出九九乘法表：</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;hr&gt;'</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$j</span>=1;<span class="variable">$j</span>&lt;=9;<span class="variable">$j</span>++)&#123;</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">'&lt;br&gt;'</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="variable">$i</span>=1;<span class="variable">$i</span>&lt;=<span class="variable">$j</span>;<span class="variable">$i</span>++)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"<span class="variable">$j</span>*<span class="variable">$i</span>="</span>.<span class="variable">$j</span>*<span class="variable">$i</span>.<span class="string">"&amp;nbsp;&amp;nbsp"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出2000年及以后的5个闰年年份</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;hr&gt;'</span>;</span><br><span class="line"><span class="variable">$year</span>=2000;</span><br><span class="line"><span class="variable">$count</span>=0;</span><br><span class="line"><span class="keyword">for</span>( ; ;<span class="variable">$year</span>++)&#123;</span><br><span class="line">	<span class="keyword">if</span>((<span class="variable">$year</span>%4==0 &amp;&amp; <span class="variable">$year</span>%100!=0) || (<span class="variable">$year</span>%400==0))&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="variable">$year</span>.<span class="string">"&amp;nbsp;&amp;nbsp;"</span>;</span><br><span class="line">		<span class="variable">$count</span>++;</span><br><span class="line">		<span class="keyword">if</span>(<span class="variable">$count</span>&gt;=5)&#123;</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#输出100以内的所有质数</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;hr&gt;'</span>;</span><br><span class="line"><span class="comment">#方法1：</span></span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$i</span>=2;<span class="variable">$i</span>&lt;=99;<span class="variable">$i</span>++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="variable">$j</span>=2;<span class="variable">$j</span>&lt;<span class="variable">$i</span>;<span class="variable">$j</span>++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="variable">$i</span>%<span class="variable">$j</span>===0)&#123;</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="variable">$i</span>===<span class="variable">$j</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="variable">$i</span>.<span class="string">"&amp;nbsp;&amp;nbsp;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#方法2：</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&lt;hr&gt;'</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$i</span>=1;<span class="variable">$i</span>&lt;=100;<span class="variable">$i</span>++)&#123;</span><br><span class="line">	<span class="variable">$k</span>=0;</span><br><span class="line">	<span class="keyword">for</span>(<span class="variable">$j</span>=1;<span class="variable">$j</span>&lt;<span class="variable">$i</span>;<span class="variable">$j</span>++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="variable">$i</span>%<span class="variable">$j</span>==0)&#123;</span><br><span class="line">			<span class="variable">$k</span>++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="variable">$k</span>==1)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="variable">$i</span>;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&amp;nbsp;&amp;nbsp"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/08/daily_05/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-daily_04" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">

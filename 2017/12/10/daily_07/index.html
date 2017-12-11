@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/TeresaTing/TeresaTing.github.io">
-  <title>Archives: 2017/11 | Sunshine</title>
+  <title>daily_07 | Sunshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sunshine">
-<meta property="og:url" content="https://github.com/TeresaTing/TeresaTing.github.io/archives/2017/11/index.html">
+  <meta name="description" content="将十进制的数字转换为二进制并返回1234567891011121314151617181920212223242526&amp;lt;script&amp;gt;	function decode2Bin(num)&amp;#123;				//1、声明一个数组stack,用于保存每次计算出来的余数				var sta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="daily_07">
+<meta property="og:url" content="https://github.com/TeresaTing/TeresaTing.github.io/2017/12/10/daily_07/index.html">
 <meta property="og:site_name" content="Sunshine">
+<meta property="og:description" content="将十进制的数字转换为二进制并返回1234567891011121314151617181920212223242526&amp;lt;script&amp;gt;	function decode2Bin(num)&amp;#123;				//1、声明一个数组stack,用于保存每次计算出来的余数				var stack=[];				/*					2、操作						2.1循环条件：当num&amp;gt;0的时候，继续循环">
+<meta property="og:updated_time" content="2017-12-11T04:01:20.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sunshine">
+<meta name="twitter:title" content="daily_07">
+<meta name="twitter:description" content="将十进制的数字转换为二进制并返回1234567891011121314151617181920212223242526&amp;lt;script&amp;gt;	function decode2Bin(num)&amp;#123;				//1、声明一个数组stack,用于保存每次计算出来的余数				var stack=[];				/*					2、操作						2.1循环条件：当num&amp;gt;0的时候，继续循环">
   
     <link rel="alternative" href="/atom.xml" title="Sunshine" type="application/atom+xml">
   
@@ -149,103 +153,163 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-daily_07" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      daily_07
+    </h1>
+  
+
+        
+        <a href="/2017/12/10/daily_07/" class="archive-article-date">
+  	<time datetime="2017-12-10T04:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="将十进制的数字转换为二进制并返回"><a href="#将十进制的数字转换为二进制并返回" class="headerlink" title="将十进制的数字转换为二进制并返回"></a>将十进制的数字转换为二进制并返回</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> decode2Bin(num)&#123;</span><br><span class="line">				//1、声明一个数组stack,用于保存每次计算出来的余数</span><br><span class="line">				var stack=[];</span><br><span class="line">				/*</span><br><span class="line">					2、操作</span><br><span class="line">						2.1循环条件：当num&gt;0的时候，继续循环</span><br><span class="line">						2.2循环操作：</span><br><span class="line">							2.2.1先计算num%2的值，并保存进stack中</span><br><span class="line">							2.2.2将num/2的结果取整再赋值给num</span><br><span class="line">				 */</span><br><span class="line">				 <span class="keyword">while</span>(num&gt;0)&#123;</span><br><span class="line">					 var r=num%2;</span><br><span class="line">					 stack.push(r);</span><br><span class="line">					 num=parseInt(num/2);</span><br><span class="line">				 &#125;</span><br><span class="line">				 //3、将stack反转并拼成字符串，再返回</span><br><span class="line">				 <span class="built_in">return</span> stack.reverse().join(<span class="string">""</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">function</span> <span class="function"><span class="title">testDecode</span></span>()&#123;</span><br><span class="line">				var num=parseInt(prompt(<span class="string">"请输入一个数字："</span>));</span><br><span class="line">				var result=decode2Bin(num);</span><br><span class="line">				console.log(num+<span class="string">"---&gt;"</span>+result);</span><br><span class="line">			&#125;</span><br><span class="line">    testDecode();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="打印九九乘法表"><a href="#打印九九乘法表" class="headerlink" title="打印九九乘法表"></a>打印九九乘法表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">printNine</span></span>()&#123;</span><br><span class="line">				<span class="keyword">for</span>(var i=1,array=[];i&lt;=9;i++,array.length=0)&#123;</span><br><span class="line">					<span class="keyword">for</span>(var j=1;j&lt;=i;j++)&#123;</span><br><span class="line">						array[array.length]=i+<span class="string">"*"</span>+j+<span class="string">"="</span>+(i*j);</span><br><span class="line">					&#125;</span><br><span class="line">					console.log(array.join(<span class="string">"\t"</span>));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">    printNine();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="打印等腰三角形"><a href="#打印等腰三角形" class="headerlink" title="打印等腰三角形"></a>打印等腰三角形</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">printTriangle1</span></span>()&#123;</span><br><span class="line">				<span class="keyword">for</span>(var i=1,array=[];i&lt;=5;i++,array.length=0)&#123;</span><br><span class="line">					//内层循环1：控制空格</span><br><span class="line">					<span class="keyword">for</span>(var j=1;j&lt;=5-i;j++)&#123;</span><br><span class="line">						array[array.length]=<span class="string">" "</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					//内层循环2：控制*</span><br><span class="line">					<span class="keyword">for</span>(var k=1;k&lt;=2*i-1;k++)&#123;</span><br><span class="line">						array[array.length]=<span class="string">"*"</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					console.log(array.join(<span class="string">""</span>));</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">    printTriangle1();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="打印菲波那切数列中的前10个数-兔子生子问题：一对兔子，第3个月生一对小兔子，小兔子第3个月也生一对兔子，以此类推，问第10个月共有多少对兔子？"><a href="#打印菲波那切数列中的前10个数-兔子生子问题：一对兔子，第3个月生一对小兔子，小兔子第3个月也生一对兔子，以此类推，问第10个月共有多少对兔子？" class="headerlink" title="打印菲波那切数列中的前10个数(兔子生子问题：一对兔子，第3个月生一对小兔子，小兔子第3个月也生一对兔子，以此类推，问第10个月共有多少对兔子？)"></a>打印菲波那切数列中的前10个数(兔子生子问题：一对兔子，第3个月生一对小兔子，小兔子第3个月也生一对兔子，以此类推，问第10个月共有多少对兔子？)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">printFib</span></span>()&#123;</span><br><span class="line">			//1、先声明两个数字，n1 和 n2 ，分别赋值为1</span><br><span class="line">			var n1 = 1 , n2 = 1;</span><br><span class="line">			//2、将 n1 和 n2 的值打印输出</span><br><span class="line">			console.log(n1);</span><br><span class="line">			console.log(n2);</span><br><span class="line">			//3、通过 n1 和 n2 计算第三个 数字，赋值给 n1，再通过 n1 和 n2 计算第四个数字，赋值给 n2，打印输出 n1 和 n2 ；再通过 n1 和 n2 计算第五个数字，赋值给n1，再通过 n1 和 n2 计算第六个数字，赋值给 n2 ，打印输出 n1 和 n2 ; ... ...</span><br><span class="line">			<span class="keyword">for</span>(var i = 1;i&lt;=4 ; i ++)&#123;</span><br><span class="line">				//将 n1 和 n2 相加 赋值给 n1 ，表示 第3,5,7,9 个数</span><br><span class="line">				n1=n1 + n2;</span><br><span class="line">				console.log(n1);</span><br><span class="line">				//将 n1(新) 和 n2 相加，赋值给n2，表示 第4,6,8,10个数</span><br><span class="line">				n2=n1 + n2;</span><br><span class="line">				console.log(n2);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    printFib();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="判断质数"><a href="#判断质数" class="headerlink" title="判断质数"></a>判断质数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">//方法一：</span><br><span class="line">	<span class="keyword">function</span> isPrime(n)&#123;</span><br><span class="line">      <span class="keyword">if</span>(!isNaN(n)&amp;&amp;n&gt;1)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;=3) <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(n%2==0) <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="keyword">for</span>(var i=3;i&lt;=Math.sqrt(n);i+=2)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n%i==0)</span><br><span class="line">              <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;<span class="keyword">else</span></span><br><span class="line">        console.error(<span class="string">"必须输入&gt;1的数字"</span>);</span><br><span class="line">    &#125;//执行效率; 异常处理;</span><br><span class="line">    isPrime(117);//<span class="literal">false</span></span><br><span class="line">//方法二：</span><br><span class="line"><span class="keyword">function</span> isPrime(num)&#123;</span><br><span class="line">    <span class="keyword">for</span>(var i=2;i&lt;num;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(num%i==0)&#123;</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i==num)&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(isPrime(19));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/18/daily_01/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/18/daily_01/">daily_01</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/TeresaTing/TeresaTing.github.io/2017/12/10/daily_07/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/18/test/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/09/daily_06/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">daily_06</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/18/test/">test</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/18/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:13:56.928Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/18/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -268,8 +332,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
