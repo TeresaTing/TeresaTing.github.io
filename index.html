@@ -151,6 +151,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-daily_08" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/22/daily_08/">daily_08</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/22/daily_08/" class="archive-article-date">
+  	<time datetime="2017-12-22T09:06:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="怎样将字符串中的用户名、密码…截取出来，并保存到空对象中"><a href="#怎样将字符串中的用户名、密码…截取出来，并保存到空对象中" class="headerlink" title="怎样将字符串中的用户名、密码…截取出来，并保存到空对象中?"></a>怎样将字符串中的用户名、密码…截取出来，并保存到空对象中?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var str=<span class="string">"uname='dingding'&amp;upwd='123456'&amp;email='123456789@qq.com'&amp;phone='12345678901'"</span>;</span><br><span class="line">	var n=str.split(/[&amp;=]/g)</span><br><span class="line">	var result = &#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(n.length) &#123;</span><br><span class="line">	  result[n.shift()] = n.shift()</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(result);</span><br><span class="line"></span><br><span class="line">Object &#123;uname: <span class="string">"'dingding'"</span>, upwd: <span class="string">"'123456'"</span>, email: <span class="string">"'65asd@qq.com'"</span>, phone: <span class="string">"'15679831'"</span>&#125; //输出结果</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/22/daily_08/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-daily_07" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -668,7 +730,7 @@
 
         
         <a href="/2017/11/18/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-18T02:13:56.928Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
+  	<time datetime="2017-11-18T02:13:56.929Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
 </a>
         
       </header>
